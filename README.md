@@ -36,7 +36,7 @@ context_clipboard/
 
 ## Setup & Installation
 
-### Method 1 — Download Pre-built Installer (Recommended)
+### Method 1 - Download Pre-built Installer (Recommended)
 
 1. Go to the **[GitHub Releases](https://github.com/Arnav-Agrawal-987/context_clipboard/releases)** page.
 2. Download the latest `ContextClipboard-Setup-vX.X.X.exe`.
@@ -50,7 +50,7 @@ context_clipboard/
 
 ---
 
-### Method 2 — Build from Source
+### Method 2 - Build from Source
 
 **Prerequisites:** Python 3.12+, pip, and [NSIS](https://nsis.sourceforge.io/Download) (optional, only if you want to build the installer).
 
@@ -74,12 +74,6 @@ After `build.bat` finishes:
 - The executable is at `dist\ContextClipboard\ContextClipboard.exe`
 - A shortcut has been placed on your **Desktop**
 - You can run the app directly from the Desktop shortcut or the `dist` folder
-
-**Optional — Build the NSIS installer:**
-
-1. Install [NSIS](https://nsis.sourceforge.io/Download).
-2. Open `installer\ContextClipboard.nsi` in the NSIS compiler (or right-click → "Compile NSIS Script").
-3. The installer `.exe` will be generated next to the `.nsi` file.
 
 ---
 
