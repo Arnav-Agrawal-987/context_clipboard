@@ -501,8 +501,9 @@ class AutoStartManager:
     @classmethod
     def is_enabled(cls) -> bool:
         try:
+            import winreg
             key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, cls.REG_PATH)
-            winreg.QueryValueEx(key, APP_NAME)
+            winreg.QueryValueEx(key, "Context Clipboard")
             winreg.CloseKey(key)
             return True
         except:
@@ -510,14 +511,15 @@ class AutoStartManager:
     
     @classmethod
     def set_enabled(cls, enabled: bool):
+        import winreg
         key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, cls.REG_PATH, 0, winreg.KEY_SET_VALUE)
         
         if enabled:
             exe_path = sys.executable if getattr(sys, 'frozen', False) else sys.argv[0]
-            winreg.SetValueEx(key, APP_NAME, 0, winreg.REG_SZ, f'"{exe_path}" --background')
+            winreg.SetValueEx(key, "Context Clipboard", 0, winreg.REG_SZ, f'"{exe_path}"')
         else:
             try:
-                winreg.DeleteValue(key, APP_NAME)
+                winreg.DeleteValue(key, "Context Clipboard")
             except:
                 pass
         
